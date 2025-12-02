@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AS_KOTLIN</string>
+    <string name="no_movies_available">Nenhum filme disponível</string>
+    <string name="director">Diretor:</string>
+    <string name="release_year">Ano de Lançamento:</string>
+    <string name="synopsis">Sinopse:</string>
+    <string name="movie_removed">%1$s removido da lista</string>
+</resources>
