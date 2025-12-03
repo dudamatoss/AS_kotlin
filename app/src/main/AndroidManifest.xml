@@ -20,10 +20,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.details.DetailsActivity"
-            android:exported="false"
-            android:parentActivityName=".ui.main.MainActivity" />
     </application>
 
 </manifest>
