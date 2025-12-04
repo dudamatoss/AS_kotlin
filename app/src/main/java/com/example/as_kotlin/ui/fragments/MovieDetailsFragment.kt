@@ -59,18 +59,20 @@ class MovieDetailsFragment : Fragment() {
     }
 
     private fun setupMenu() {
+        // Botão de editar customizado
+        binding.buttonEdit.setOnClickListener {
+            viewModel.movie.value?.let { movie ->
+                val bundle = Bundle().apply {
+                    putInt("movieId", movie.id)
+                }
+                findNavController().navigate(R.id.action_movieDetailsFragment_to_movieFormFragment, bundle)
+            }
+        }
+        
+        // Menu para deletar
         binding.toolbar.inflateMenu(R.menu.menu_details)
         binding.toolbar.setOnMenuItemClickListener { item ->
             when (item.itemId) {
-                R.id.action_edit -> {
-                    viewModel.movie.value?.let { movie ->
-                        val bundle = Bundle().apply {
-                            putInt("movieId", movie.id)
-                        }
-                        findNavController().navigate(R.id.action_movieDetailsFragment_to_movieFormFragment, bundle)
-                    }
-                    true
-                }
                 R.id.action_delete -> {
                     viewModel.movie.value?.let { movie ->
                         showDeleteDialog(movie)

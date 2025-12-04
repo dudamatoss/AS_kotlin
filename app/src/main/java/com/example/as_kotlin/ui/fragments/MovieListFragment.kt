@@ -61,15 +61,8 @@ class MovieListFragment : Fragment() {
     }
 
     private fun setupFab() {
-        binding.toolbar.inflateMenu(R.menu.menu_list)
-        binding.toolbar.setOnMenuItemClickListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.action_add -> {
-                    navigateToForm(null)
-                    true
-                }
-                else -> false
-            }
+        binding.fabAdd.setOnClickListener {
+            navigateToForm(null)
         }
     }
 

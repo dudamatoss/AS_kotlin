@@ -18,9 +18,11 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="@color/primary_green"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:titleTextColor="@color/white" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -30,14 +32,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="20dp">
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:hint="@string/movie_title"
-                    app:boxStrokeColor="?attr/colorPrimary">
+                    app:boxStrokeColor="@color/primary_green"
+                    app:hintTextColor="@color/primary_green">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editTitle"
@@ -51,11 +55,13 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputDirector"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:hint="@string/movie_director"
-                    app:boxStrokeColor="?attr/colorPrimary">
+                    app:boxStrokeColor="@color/primary_green"
+                    app:hintTextColor="@color/primary_green">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editDirector"
@@ -69,17 +75,20 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputYear"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:hint="@string/movie_year"
-                    app:boxStrokeColor="?attr/colorPrimary">
+                    app:boxStrokeColor="@color/primary_green"
+                    app:hintTextColor="@color/primary_green">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editYear"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="number"
+                        android:maxLength="4"
                         android:text="@={viewModel.releaseYear}"
                         android:textSize="16sp"
                         tools:text="1972" />
@@ -87,11 +96,13 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputSynopsis"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"
                     android:hint="@string/movie_synopsis"
-                    app:boxStrokeColor="?attr/colorPrimary">
+                    app:boxStrokeColor="@color/primary_green"
+                    app:hintTextColor="@color/primary_green">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editSynopsis"
@@ -109,12 +120,15 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/buttonSave"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:minHeight="56dp"
                     android:text="@string/save"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    app:backgroundTint="@color/accent_blue"
+                    app:cornerRadius="8dp" />
 
             </LinearLayout>
 
@@ -122,4 +136,3 @@
 
     </LinearLayout>
 </layout>
-

@@ -77,30 +77,35 @@ class MovieFormFragment : Fragment() {
 
     private fun validateInput(title: String, director: String, year: String, synopsis: String): Boolean {
         var isValid = true
+        
         if (title.isEmpty()) {
-            binding.editTitle.error = "Título é obrigatório"
+            binding.textInputTitle.error = "Título é obrigatório"
             isValid = false
         } else {
-            binding.editTitle.error = null
+            binding.textInputTitle.error = null
         }
+        
         if (director.isEmpty()) {
-            binding.editDirector.error = "Diretor é obrigatório"
+            binding.textInputDirector.error = "Diretor é obrigatório"
             isValid = false
         } else {
-            binding.editDirector.error = null
+            binding.textInputDirector.error = null
         }
+        
         if (year.isEmpty() || year.toIntOrNull() == null) {
-            binding.editYear.error = "Ano inválido"
+            binding.textInputYear.error = "Ano inválido"
             isValid = false
         } else {
-            binding.editYear.error = null
+            binding.textInputYear.error = null
         }
+        
         if (synopsis.isEmpty()) {
-            binding.editSynopsis.error = "Sinopse é obrigatória"
+            binding.textInputSynopsis.error = "Sinopse é obrigatória"
             isValid = false
         } else {
-            binding.editSynopsis.error = null
+            binding.textInputSynopsis.error = null
         }
+        
         return isValid
     }
 
